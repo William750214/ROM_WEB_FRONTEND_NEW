@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script type="text/javascript">
+        function onLoad() {
+            // console.log("Hello JSON!");
+            var student1 = {"name": "zhangsan", "age": 18, "sex": true, "birthday": new Date()};
+            var student2 = {name: "lisi", age: 28, sex: false, birthday: new Date()};
+
+            var students = [student1, student2];
+
+            // delete student1.sex;
+            //
+            // for (var key in student1) {
+            //     console.log(key + " : " + student1[key]);
+            // }
+
+            // console.log(JSON.stringify(student1));
+            // console.log(JSON.stringify(student2));
+            // console.log(JSON.stringify(students));
+
+            // var str01 = '{"name":"zhangsan","age":18,"sex":true}';
+            // var str02 = '{"name":"lisi","age":28,"sex":false}';
+            // var str03 = '[{"name":"zhangsan","age":18,"sex":true},{"name":"lisi","age":28,"sex":false}]';
+
+            var str01 = "{\"name\":\"zhangsan\",\"age\":18,\"sex\":true,\"birthday\":\"2018-09-24T15:45:19.955Z\"}";
+            var str02 = "{\"name\":\"lisi\",\"age\":28,\"sex\":false,\"birthday\":\"2018-09-24T15:45:19.955Z\"}";
+            var str03 = "[{\"name\":\"zhangsan\",\"age\":18,\"sex\":true,\"birthday\":\"2018-09-24T15:45:19.955Z\"},{\"name\":\"lisi\",\"age\":28,\"sex\":false,\"birthday\":\"2018-09-24T15:45:19.955Z\"}]";
+
+            console.dir(JSON.parse(str01,function (key, value) {
+                console.log(value);
+                var dateRegExp = /^\d{4}-\d{2}-\d{2}T\d{1,2}:\d{2}:\d{2}/;
+                if (dateRegExp.test(value)) {
+                    return new Date(value);
+                } else {
+                    return value;
+                }
+            }));
+            // console.dir(JSON.parse(str02));
+            // console.dir(JSON.parse(str03));
+
+        }
+
+    </script>
+</head>
+<body onload="onLoad()">
+<h1>Hello JSON!</h1>
+</body>
+</html>

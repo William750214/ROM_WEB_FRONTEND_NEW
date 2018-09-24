@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversal</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .css01 {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("button").click(function () {
+                // var elements = $("#div06").parent();
+                // var elements = $("#div06").parents();
+                // var elements = $("#div06").parentsUntil("body");
+                // var elements = $("#div06").parentsUntil("#div01");
+
+                // var elements = $("#div01").children();
+                // var elements = $("#div01").children("div");
+                // var elements = $("#div01").children("p");
+                // var elements = $("#div01").children("#p02");
+
+                // var elements = $("#div01").find("*");
+                // var elements = $("#div01").find("div");
+                // var elements = $("#div01").find("p");
+
+                // var elements = $("#p05").siblings();
+                // var elements = $("#p05").siblings("p");
+                // var elements = $("#p05").next();
+                // var elements = $("#p05").nextAll();
+                // var elements = $("#p05").nextAll("#p08");
+                // var elements = $("#p05").nextUntil("#p08");
+
+                // var elements = $("p").first();
+                // var elements = $("p").last();
+                // var elements = $("p").eq(0);
+                // var elements = $("p").eq(1);
+
+                // var elements = $("*").filter("div");
+                // var elements = $("*").filter("p");
+                var elements = $("*").not("p");
+                var elements = $("*").not("div");
+
+                console.dir(elements);
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="div01" style="border: 5px solid brown;background-color:yellowgreen;width: 300px;height: 200px;padding: 10px">
+    <div id="div02">
+        <div id="div03">
+            <div id="div04">
+                <div id="div05">
+                    <div id="div06">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="p02">p02</p>
+    <p id="p03">p03</p>
+    <p id="p04">p04</p>
+    <p id="p05">p05</p>
+    <p id="p06">p06</p>
+    <p id="p07">p07</p>
+    <p id="p08">p08</p>
+</div>
+
+<button>Click me</button>
+</body>
+</html>

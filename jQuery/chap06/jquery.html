@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .css01 {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        // var abc = "Global Hello";
+
+        var win = this;
+
+        $(function ($) {
+
+            $("button").click(function () {
+                // var domObj = document.getElementById("p01");
+                // var jqObj = $(domObj);
+
+                // var jqObj = $("p");
+                //
+                // console.log(jqObj.index());
+
+                // jqObj.data("key01",10);
+                // jqObj.data("key02",20);
+
+                // $.data(jqObj[0], "key01", 10);
+                // $.data(jqObj[0], "key02", 20);
+
+                // console.log(jqObj.data("key01"));
+                // console.log(jqObj.data("key02"));
+
+                // jqObj.removeData("key01");
+
+                // console.log($.data(jqObj[0], "key01"));
+                // console.log($.data(jqObj[0], "key02"));
+
+                // console.log($.contains(document.getElementById("div01"),document.getElementById("p01")));
+                // console.log($.contains($("#div01")[0],$("#p01")[0]));
+                //
+                var jqObj = $("p");
+                //
+                // console.dir(jqObj.toArray());
+                //
+                // var domArr = jqObj.toArray();
+                //
+                // console.log($.inArray(document.getElementById("p01"),domArr,0));
+
+                var arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+                var obj = {"key01": 10, "key02": 20, "key03": 30, "key04": 40, "key05": 50};
+
+                // $.each(arr,function (index, value) {
+                //     console.log(index + ":" + value);
+                // });
+
+                // $.each(obj,function (key, value) {
+                //     console.log(key + ":" + value);
+                // })
+
+                // jqObj.each(function () {
+                //     console.dir($(this));
+                // })
+
+                // jqObj.each(function (index, value) {
+                //     console.dir($(this));
+                // })
+
+                // var newArr = $.grep(arr, function (value, index) {
+                //     if (value >= 60) {
+                //         return value;
+                //     }
+                // });
+                //
+                // console.dir(newArr);
+
+                // var obj01 = {"key01": 100, "key06": 60, "key07": [1, 2, 3]};
+                //
+                // var obj02 = $.extend(true, obj, obj01);
+                //
+                // obj01.key07[0] = 10;
+                //
+                // console.dir(obj02);
+
+                // $.fn.extend({
+                //     setSize: function (i) {
+                //         this.each(function (index, dom) {
+                //             dom.size = i;
+                //         });
+                //     }
+                // });
+                //
+                // $("input").setSize(100);
+
+                // var abc = "Hello";
+
+                // var expr = "alert(abc)";
+
+                // eval(expr);
+                // $.globalEval(expr);
+
+                // console.log($.isArray(arr));
+                // console.log($.isArray(obj));
+                // console.log($.isArray(null));
+                // console.log($.isArray([]));
+
+                // console.log($.isEmptyObject([]));
+                // console.log($.isEmptyObject({}));
+                // console.log($.isEmptyObject(null));
+                // console.log($.isEmptyObject(obj));
+                // console.log($.isEmptyObject(arr));
+
+                // var add = function (a,b) {
+                //     return a + b;
+                // };
+                //
+                // console.log($.isFunction(add));
+                // console.log($.isFunction(Date));
+                // console.log($.isFunction($.isFunction));
+                // console.log($.isFunction([]));
+                // console.log($.isFunction({}));
+                // console.log($.isFunction(arr));
+                // console.log($.isFunction(obj));
+
+
+                // console.log($.isNumeric(888));
+                // console.log($.isNumeric('888'));
+                // console.log($.isNumeric('888abc'));
+
+
+                // console.log($.isWindow(window));
+                // console.log($.isWindow(win));
+                // console.log($.isWindow(this));
+
+                // var newArr = $.map(arr,function (value, index) {
+                //     // return value + 100;
+                //
+                //     if (value >=60) {
+                //         return value;
+                //     }
+                // });
+                //
+                // console.dir(newArr);
+
+                // var newArr = $.map(obj, function (value, key) {
+                //     // return value;
+                //     return key;
+                // });
+                //
+                // console.dir(newArr);
+                //
+                // console.dir($.merge(arr, newArr));
+                //
+                // console.dir($.now());
+                //
+                // console.dir(">" + $.trim("    abc    efg      ") + "<");
+
+                var date = new Date();
+
+                // console.log(typeof arr);
+                // console.log(typeof date);
+                // console.log(typeof obj);
+                //
+                // console.log(date instanceof Date);
+
+                console.log($.type(arr));
+                console.log($.type(date));
+                console.log($.type(obj));
+
+                var obj1 = {"key01": 10, "key02": 20, "key03": 30, "key04": 40, "key05": arr};
+                console.log($.param(obj1));
+                console.log($.param(obj1, true));
+
+
+                var $$ = $.noConflict();
+                console.dir($$.now());
+                console.dir(jQuery);
+
+                $("#div01").css("color","red").slideUp(2000).slideDown(2000);
+
+                // $("#div01").css("color","red");
+                // $("#div01").slideUp(2000);
+                // $("#div01").slideDown(2000);
+
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="div01" style="border: 5px solid brown;background-color:yellowgreen;width: 300px;height: 200px;padding: 10px">
+    <p id="p01" style="color: red">This is a <b>text01</b>.</p>
+    <p class="c01">This is a text02.</p>
+    <input type="text" value="Hello01" size="10"/>
+    <br/>
+    <input type="text" value="Hello02" size="10"/>
+    <br/>
+</div>
+
+<button>Click me</button>
+</body>
+</html>

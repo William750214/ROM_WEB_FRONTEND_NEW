@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .css01 {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn02").click(function () {
+                alert(888)
+            });
+
+            $("#btn01").click(function () {
+                var url01 = "http://localhost:8080/demo.txt h1";
+                var url02 = "http://localhost:8080/ajax.jsp";
+                var url03 = "http://localhost:8080/demo.json";
+
+                // $.get(url02, function (data, status, xhr) {
+                //     if ("success" === status) {
+                //         // $("#div01").html(data);
+                //     }
+                //     // console.log(888);
+                // });
+
+                var student = {
+                    name: $("#name").val(),
+                    age: 18,
+                    sex: true
+                };
+
+                // $.post(url02, student, function (data, status, xhr) {
+                //     if ("success" === status) {
+                //         $("#div01").html(data);
+                //     }
+                //     // console.log(888);
+                // });
+
+                // $("#div01").load(url01);
+                // $("#div01").load(url02, student);
+
+                $.ajax({
+                    url: url02,
+                    type: 'POST',
+                    data: student,
+                    cache: false,
+                    timeout: 180000,
+                    // dataType: 'text',
+                    dataType: 'json',
+                    async: true,
+                    success: function (data, status, xhr) {
+                        // $("#div01").html(data);
+                        console.dir(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("error");
+                    }
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="div01" style="border: 5px solid brown;background-color:yellowgreen;width: 300px;height: 200px;padding: 10px">
+
+</div>
+<br/>
+Name: <input id="name" type="text" value="" autocomplete="off"/>
+
+<button id="btn01">Click me</button>
+<button id="btn02">Test</button>
+</body>
+</html>

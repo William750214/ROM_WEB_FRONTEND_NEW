@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .css01 {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            // console.log("Hello jQuery88888888!");
+            // $("p").hide();
+            // $("#p01").hide();
+            // $(".c01").hide();
+
+            // $("*").hide();
+
+            $("button").click(function () {
+                // $(this).hide();
+                // console.log($("#p01").text());
+                // console.log($("#p01").html());
+                // console.log($("input").val());
+
+                // $("#p01").text("Hell <b>P01!</b>");
+                // $("#p01").html("Hell <b>P01!</b>");
+                // $("input").val("Click");
+
+                // console.log($("input").attr("type"));
+                // console.log($("input").attr("value"));
+
+                // $("input").attr("size","100");
+
+                // $("input").attr({"size": "100", "value": "Hello jQuery!"});
+
+                // $("p").text(function (i, origText) {
+                //     return origText + i + " Hello jQuery!";
+                // });
+
+                // $("input").attr("size", function (i, origVal) {
+                //     if (i == 0) {
+                //         return parseInt(origVal) + 10;
+                //     } else {
+                //         return parseInt(origVal) + 20;
+                //     }
+                // });
+
+                // $("#p01").append("Hello jQuery!");
+                // $("#p01").prepend("Hello jQuery!");
+                // $("#p01").after("Hello jQuery!");
+                // $("#p01").before("Hello jQuery!","Hello jQuery!","Hello jQuery!");
+
+                // var txt1 = "<b>Hello jQuery!</b>";
+                // var txt2 = $("<b></b>").text("Hello jQuery!");
+                // var txt3 = document.createElement("b");
+                // txt3.innerText = "Hello jQuery!";
+                //
+                // $("#p01").after(txt3);
+
+                // $("#div01").remove();
+                // $("#div01").empty();
+
+                // $("p").remove(".c01");
+
+                // $("#div01").addClass("css01");
+                // $("#div01").removeClass("css01");
+                // $("#div01").toggleClass("css01");
+
+                // console.log($("#p01").css("color"));
+                // console.log($("#p01").css("color","blue"));
+                // console.log($("#p01").css("font-size","28px"));
+
+                console.log("Width:" + $("#div01").width());
+                console.log("Height:" + $("#div01").height());
+
+                console.log("InnerWidth:" + $("#div01").innerWidth());
+                console.log("InnerHeight:" + $("#div01").innerHeight());
+
+                console.log("OuterWidth:" + $("#div01").outerWidth());
+                console.log("OuterHeight:" + $("#div01").outerHeight());
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="div01" style="border: 5px solid brown;background-color:yellowgreen;width: 300px;height: 200px;padding: 10px">
+    <p id="p01" style="color: red">This is a <b>text01</b>.</p>
+    <p class="c01">This is a text02.</p>
+    <input type="text" value="Hello01" size="10"/>
+    <br/>
+    <input type="text" value="Hello02" size="10"/>
+    <br/>
+</div>
+
+<button>Click me</button>
+</body>
+</html>

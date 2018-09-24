@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        function onLoad() {
+            console.log("Hello jQuery!")
+        }
+
+        //
+        // $(document).ready(function () {
+        //     console.log("Hello jQuery88888!");
+        // });
+        //
+        // $(document).ready(function () {
+        //     console.log("Hello jQuery888!");
+        // });
+
+        $(function () {
+            // console.log("Hello jQuery88888888!");
+            // $("p").hide();
+            // $("#p01").hide();
+            // $(".c01").hide();
+
+            // $("*").hide();
+
+            $("button").click(function () {
+                $(this).hide();
+            });
+        })
+    </script>
+</head>
+<body onload="onLoad()">
+<p id="p01">This is a text01.</p>
+<p class="c01">This is a text02.</p>
+<button>Click me</button>
+</body>
+</html>
